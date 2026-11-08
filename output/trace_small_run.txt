@@ -1,0 +1,53 @@
+================================================================================
+        MINI-COURIER PLANNER: OPTIMIZED TRIP MANIFEST & ROUTE
+================================================================================
+
+[1] PARCEL PRIORITIZATION (Phase 2 Sorting)
+Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utility
+--------------------------------------------------------------------------------
+1     P06    Neha Kapoor     Sec56             3 kg    1.5 hrs      10/10      122
+2     P02    Priya Verma     CyberCity         5 kg    2.0 hrs       8/10      102
+3     P01    Aarav Sharma    Sec14             6 kg    3.0 hrs       9/10      111
+4     P04    Ananya Rao      GolfCourse        4 kg    4.0 hrs       7/10       90
+5     P03    Rohan Gupta     Sec29             8 kg    5.0 hrs       6/10       79
+6     P05    Kabir Singh     Sec49             7 kg    6.0 hrs       5/10       68
+
+[2] VEHICLE PACKING OPTIMIZATION (Phase 2 0/1 Knapsack DP)
+* Vehicle Maximum Weight Capacity: 20 kg
+* Total Loaded Weight:             18 kg
+* Vehicle Capacity Utilization:    90.0%
+* Total Delivered Utility Score:   425 pts
+* Accepted Parcels for Trip:       4 items
+    [LOADED]   [P06] -> Neha Kapoor (Sec56) | 3 kg, priority 10
+    [LOADED]   [P02] -> Priya Verma (CyberCity) | 5 kg, priority 8
+    [LOADED]   [P01] -> Aarav Sharma (Sec14) | 6 kg, priority 9
+    [LOADED]   [P04] -> Ananya Rao (GolfCourse) | 4 kg, priority 7
+* Deferred Parcels (Next Trip):    2 items
+    [DEFERRED] [P03] -> Rohan Gupta (Sec29) | 8 kg (exceeds capacity)
+    [DEFERRED] [P05] -> Kabir Singh (Sec49) | 7 kg (exceeds capacity)
+
+[2B] DYNAMIC PROGRAMMING MATRIX EVIDENCE:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Item / W         |    0 |    1 |    2 |    3 |    4 |    5 |    6 |    7 |    8 |    9 |   10 |   11 |   12 |   13 |   14 |   15 |   16 |   17 |   18 |   19 |   20
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Base (0 items)   |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0
+P06 (w=3,v=122)  |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122 |  122
+P02 (w=5,v=102)  |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  122 |  224 |  224 |  224 |  224 |  224 |  224 |  224 |  224 |  224 |  224 |  224 |  224 |  224
+P01 (w=6,v=111)  |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  122 |  224 |  233 |  233 |  233 |  233 |  233 |  335 |  335 |  335 |  335 |  335 |  335 |  335
+P04 (w=4,v=90)   |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  212 |  224 |  233 |  233 |  233 |  314 |  323 |  335 |  335 |  335 |  335 |  425 |  425 |  425
+P03 (w=8,v=79)   |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  212 |  224 |  233 |  233 |  233 |  314 |  323 |  335 |  335 |  335 |  335 |  425 |  425 |  425
+P05 (w=7,v=68)   |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  212 |  224 |  233 |  233 |  233 |  314 |  323 |  335 |  335 |  335 |  335 |  425 |  425 |  425
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[3] DELIVERY ROUTE & SHORTEST PATHS (Phase 3 Dijkstra + TSP)
+* Sequence of Delivery Stops:      Hub -> Sec56 -> GolfCourse -> CyberCity -> Sec14 -> Hub
+* Total Route Distance:            37.60 km
+* Turn-by-Turn Road Waypoints:     Hub -> Sec49 -> Sec56 -> GolfCourse -> CyberCity -> Sec29 -> Sec14 -> RajivChowk -> SubhashChowk -> Hub
+
+[4] ALGORITHMIC RUNTIME BREAKDOWN (Phase 4 Timing)
+  * Sorting                  :   0.0163 ms
+  * Knapsack_DP              :   0.0389 ms
+  * Dijkstra_AllPairs        :   0.1514 ms
+  * Route_Planning_TSP       :   0.0336 ms
+  * Total_Pipeline           :   0.2402 ms
+================================================================================

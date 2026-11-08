@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {"id": "Hub", "name": "Central Logistics Hub (Sohna Road)", "zone": "Depot"},
+    {"id": "Sec49", "name": "Sector 49 Commercial Hub", "zone": "South Gurugram"},
+    {"id": "Sec47", "name": "Sector 47 Residential Park", "zone": "South Gurugram"},
+    {"id": "SubhashChowk", "name": "Subhash Chowk Junction", "zone": "Transit Hub"},
+    {"id": "Sec14", "name": "Sector 14 Old Gurugram Market", "zone": "Central Gurugram"},
+    {"id": "Sec29", "name": "Sector 29 Leisure Valley Sector", "zone": "Commercial Hub"},
+    {"id": "CyberCity", "name": "DLF Cyber City Tech Park", "zone": "North Gurugram"},
+    {"id": "GolfCourse", "name": "Golf Course Road Towers", "zone": "East Gurugram"},
+    {"id": "Sec56", "name": "Sector 56 Metro Station Hub", "zone": "East Gurugram"},
+    {"id": "UdyogVihar", "name": "Udyog Vihar Industrial Zone", "zone": "North Gurugram"},
+    {"id": "RajivChowk", "name": "Rajiv Chowk Highway Crossing", "zone": "Central Highway"}
+  ],
+  "edges": [
+    {"from": "Hub", "to": "Sec49", "distance_km": 3.2},
+    {"from": "Hub", "to": "SubhashChowk", "distance_km": 4.5},
+    {"from": "Sec49", "to": "Sec47", "distance_km": 2.8},
+    {"from": "Sec49", "to": "Sec56", "distance_km": 6.1},
+    {"from": "Sec47", "to": "SubhashChowk", "distance_km": 2.4},
+    {"from": "Sec47", "to": "RajivChowk", "distance_km": 5.0},
+    {"from": "SubhashChowk", "to": "RajivChowk", "distance_km": 3.5},
+    {"from": "RajivChowk", "to": "Sec14", "distance_km": 4.2},
+    {"from": "RajivChowk", "to": "Sec29", "distance_km": 5.8},
+    {"from": "Sec14", "to": "Sec29", "distance_km": 3.9},
+    {"from": "Sec14", "to": "UdyogVihar", "distance_km": 6.5},
+    {"from": "Sec29", "to": "CyberCity", "distance_km": 4.1},
+    {"from": "Sec29", "to": "GolfCourse", "distance_km": 4.8},
+    {"from": "CyberCity", "to": "UdyogVihar", "distance_km": 3.0},
+    {"from": "CyberCity", "to": "GolfCourse", "distance_km": 5.2},
+    {"from": "GolfCourse", "to": "Sec56", "distance_km": 3.6},
+    {"from": "Sec56", "to": "Sec49", "distance_km": 5.4}
+  ]
+}

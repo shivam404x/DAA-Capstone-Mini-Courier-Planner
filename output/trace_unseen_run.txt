@@ -1,0 +1,59 @@
+================================================================================
+        MINI-COURIER PLANNER: OPTIMIZED TRIP MANIFEST & ROUTE
+================================================================================
+
+[1] PARCEL PRIORITIZATION (Phase 2 Sorting)
+Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utility
+--------------------------------------------------------------------------------
+1     U08    APJ Abdul Kalam RajivChowk        2 kg    0.8 hrs      10/10      123
+2     U01    Dr. Ramanujan   CyberCity         5 kg    1.0 hrs      10/10      123
+3     U06    C.V. Raman      UdyogVihar        3 kg    1.5 hrs       9/10      112
+4     U03    Kalpana Chawla  GolfCourse        4 kg    2.0 hrs       9/10      112
+5     U02    Prof. Swaminathan Sec14             7 kg    3.5 hrs       8/10      100
+6     U04    Homi Bhabha     Sec29             6 kg    4.0 hrs       7/10       90
+7     U05    Vikram Sarabhai Sec56             8 kg    5.0 hrs       6/10       79
+8     U07    Satyendra Bose  Sec49             5 kg    6.0 hrs       5/10       68
+
+[2] VEHICLE PACKING OPTIMIZATION (Phase 2 0/1 Knapsack DP)
+* Vehicle Maximum Weight Capacity: 25 kg
+* Total Loaded Weight:             25 kg
+* Vehicle Capacity Utilization:    100.0%
+* Total Delivered Utility Score:   628 pts
+* Accepted Parcels for Trip:       6 items
+    [LOADED]   [U08] -> APJ Abdul Kalam (RajivChowk) | 2 kg, priority 10
+    [LOADED]   [U01] -> Dr. Ramanujan (CyberCity) | 5 kg, priority 10
+    [LOADED]   [U06] -> C.V. Raman (UdyogVihar) | 3 kg, priority 9
+    [LOADED]   [U03] -> Kalpana Chawla (GolfCourse) | 4 kg, priority 9
+    [LOADED]   [U04] -> Homi Bhabha (Sec29) | 6 kg, priority 7
+    [LOADED]   [U07] -> Satyendra Bose (Sec49) | 5 kg, priority 5
+* Deferred Parcels (Next Trip):    2 items
+    [DEFERRED] [U02] -> Prof. Swaminathan (Sec14) | 7 kg (exceeds capacity)
+    [DEFERRED] [U05] -> Vikram Sarabhai (Sec56) | 8 kg (exceeds capacity)
+
+[2B] DYNAMIC PROGRAMMING MATRIX EVIDENCE:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Item / W         |    0 |    1 |    2 |    3 |    4 |    5 |    6 |    7 |    8 |    9 |   10 |   11 |   12 |   13 |   14 |   15 |   16 |   17 |   18 |   19 |   20 |   21 |   22 |   23 |   24 |   25
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Base (0 items)   |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0
+U08 (w=2,v=123)  |    0 |    0 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123 |  123
+U01 (w=5,v=123)  |    0 |    0 |  123 |  123 |  123 |  123 |  123 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246 |  246
+U06 (w=3,v=112)  |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  246 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358 |  358
+U03 (w=4,v=112)  |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  347 |  358 |  358 |  358 |  358 |  470 |  470 |  470 |  470 |  470 |  470 |  470 |  470 |  470 |  470 |  470 |  470
+U02 (w=7,v=100)  |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  347 |  358 |  358 |  358 |  358 |  470 |  470 |  470 |  470 |  470 |  470 |  470 |  570 |  570 |  570 |  570 |  570
+U04 (w=6,v=90)   |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  347 |  358 |  358 |  358 |  358 |  470 |  470 |  470 |  470 |  470 |  470 |  560 |  570 |  570 |  570 |  570 |  570
+U05 (w=8,v=79)   |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  347 |  358 |  358 |  358 |  358 |  470 |  470 |  470 |  470 |  470 |  470 |  560 |  570 |  570 |  570 |  570 |  570
+U07 (w=5,v=68)   |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  347 |  358 |  358 |  358 |  358 |  470 |  470 |  470 |  470 |  470 |  538 |  560 |  570 |  570 |  570 |  570 |  628
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[3] DELIVERY ROUTE & SHORTEST PATHS (Phase 3 Dijkstra + TSP)
+* Sequence of Delivery Stops:      Hub -> Sec49 -> GolfCourse -> UdyogVihar -> CyberCity -> Sec29 -> RajivChowk -> Hub
+* Total Route Distance:            41.30 km
+* Turn-by-Turn Road Waypoints:     Hub -> Sec49 -> Sec56 -> GolfCourse -> CyberCity -> UdyogVihar -> CyberCity -> Sec29 -> RajivChowk -> SubhashChowk -> Hub
+
+[4] ALGORITHMIC RUNTIME BREAKDOWN (Phase 4 Timing)
+  * Sorting                  :   0.0351 ms
+  * Knapsack_DP              :   0.0803 ms
+  * Dijkstra_AllPairs        :   0.2829 ms
+  * Route_Planning_TSP       :   0.0699 ms
+  * Total_Pipeline           :   0.4682 ms
+================================================================================

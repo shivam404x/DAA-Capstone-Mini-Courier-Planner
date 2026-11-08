@@ -1,0 +1,231 @@
+{
+  "dataset_name": "Medium Dataset (25 Parcels, 60kg Capacity)",
+  "vehicle_capacity_kg": 60,
+  "parcels": [
+    {
+      "id": "P001",
+      "customer_name": "Amit Malhotra",
+      "destination": "Sec47",
+      "weight": 12,
+      "priority": 4,
+      "deadline_hours": 1.3,
+      "value": 62
+    },
+    {
+      "id": "P002",
+      "customer_name": "Sunita Saxena",
+      "destination": "SubhashChowk",
+      "weight": 6,
+      "priority": 6,
+      "deadline_hours": 3.5,
+      "value": 80
+    },
+    {
+      "id": "P003",
+      "customer_name": "Vikram Patel",
+      "destination": "Sec14",
+      "weight": 13,
+      "priority": 4,
+      "deadline_hours": 8.4,
+      "value": 55
+    },
+    {
+      "id": "P004",
+      "customer_name": "Pooja Gupta",
+      "destination": "Sec29",
+      "weight": 10,
+      "priority": 4,
+      "deadline_hours": 7.5,
+      "value": 56
+    },
+    {
+      "id": "P005",
+      "customer_name": "Rahul Chopra",
+      "destination": "CyberCity",
+      "weight": 2,
+      "priority": 3,
+      "deadline_hours": 2.0,
+      "value": 52
+    },
+    {
+      "id": "P006",
+      "customer_name": "Divya Joshi",
+      "destination": "GolfCourse",
+      "weight": 5,
+      "priority": 3,
+      "deadline_hours": 7.2,
+      "value": 46
+    },
+    {
+      "id": "P007",
+      "customer_name": "Sanjay Verma",
+      "destination": "Sec56",
+      "weight": 13,
+      "priority": 9,
+      "deadline_hours": 3.4,
+      "value": 110
+    },
+    {
+      "id": "P008",
+      "customer_name": "Kavita Mehta",
+      "destination": "UdyogVihar",
+      "weight": 11,
+      "priority": 7,
+      "deadline_hours": 9.9,
+      "value": 84
+    },
+    {
+      "id": "P009",
+      "customer_name": "Deepak Bhatia",
+      "destination": "RajivChowk",
+      "weight": 2,
+      "priority": 5,
+      "deadline_hours": 8.7,
+      "value": 65
+    },
+    {
+      "id": "P010",
+      "customer_name": "Meera Sharma",
+      "destination": "Sec49",
+      "weight": 7,
+      "priority": 7,
+      "deadline_hours": 2.7,
+      "value": 91
+    },
+    {
+      "id": "P011",
+      "customer_name": "Rishi Malhotra",
+      "destination": "Sec47",
+      "weight": 14,
+      "priority": 8,
+      "deadline_hours": 2.1,
+      "value": 101
+    },
+    {
+      "id": "P012",
+      "customer_name": "Sneha Saxena",
+      "destination": "SubhashChowk",
+      "weight": 8,
+      "priority": 4,
+      "deadline_hours": 4.9,
+      "value": 59
+    },
+    {
+      "id": "P013",
+      "customer_name": "Arjun Patel",
+      "destination": "Sec14",
+      "weight": 7,
+      "priority": 7,
+      "deadline_hours": 9.9,
+      "value": 84
+    },
+    {
+      "id": "P014",
+      "customer_name": "Simran Gupta",
+      "destination": "Sec29",
+      "weight": 13,
+      "priority": 10,
+      "deadline_hours": 6.9,
+      "value": 117
+    },
+    {
+      "id": "P015",
+      "customer_name": "Kunal Chopra",
+      "destination": "CyberCity",
+      "weight": 8,
+      "priority": 4,
+      "deadline_hours": 7.1,
+      "value": 56
+    },
+    {
+      "id": "P016",
+      "customer_name": "Tanvi Joshi",
+      "destination": "GolfCourse",
+      "weight": 12,
+      "priority": 8,
+      "deadline_hours": 7.4,
+      "value": 96
+    },
+    {
+      "id": "P017",
+      "customer_name": "Manish Verma",
+      "destination": "Sec56",
+      "weight": 13,
+      "priority": 4,
+      "deadline_hours": 1.5,
+      "value": 62
+    },
+    {
+      "id": "P018",
+      "customer_name": "Isha Mehta",
+      "destination": "UdyogVihar",
+      "weight": 5,
+      "priority": 7,
+      "deadline_hours": 11.8,
+      "value": 82
+    },
+    {
+      "id": "P019",
+      "customer_name": "Harsh Bhatia",
+      "destination": "RajivChowk",
+      "weight": 5,
+      "priority": 4,
+      "deadline_hours": 5.2,
+      "value": 58
+    },
+    {
+      "id": "P020",
+      "customer_name": "Preeti Sharma",
+      "destination": "Sec49",
+      "weight": 9,
+      "priority": 8,
+      "deadline_hours": 2.8,
+      "value": 101
+    },
+    {
+      "id": "P021",
+      "customer_name": "Alok Malhotra",
+      "destination": "Sec47",
+      "weight": 7,
+      "priority": 6,
+      "deadline_hours": 8.4,
+      "value": 75
+    },
+    {
+      "id": "P022",
+      "customer_name": "Shreya Saxena",
+      "destination": "SubhashChowk",
+      "weight": 13,
+      "priority": 4,
+      "deadline_hours": 7.7,
+      "value": 56
+    },
+    {
+      "id": "P023",
+      "customer_name": "Gaurav Patel",
+      "destination": "Sec14",
+      "weight": 4,
+      "priority": 6,
+      "deadline_hours": 2.8,
+      "value": 81
+    },
+    {
+      "id": "P024",
+      "customer_name": "Nidhi Gupta",
+      "destination": "Sec29",
+      "weight": 8,
+      "priority": 7,
+      "deadline_hours": 11.9,
+      "value": 82
+    },
+    {
+      "id": "P025",
+      "customer_name": "Aditya Chopra",
+      "destination": "CyberCity",
+      "weight": 12,
+      "priority": 6,
+      "deadline_hours": 8.5,
+      "value": 75
+    }
+  ]
+}

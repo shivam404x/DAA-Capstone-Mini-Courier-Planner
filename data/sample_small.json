@@ -1,0 +1,60 @@
+{
+  "dataset_name": "Small Dataset (Tracing & Viva)",
+  "vehicle_capacity_kg": 20,
+  "parcels": [
+    {
+      "id": "P01",
+      "customer_name": "Aarav Sharma",
+      "destination": "Sec14",
+      "weight": 6,
+      "priority": 9,
+      "deadline_hours": 3.0,
+      "value": 111
+    },
+    {
+      "id": "P02",
+      "customer_name": "Priya Verma",
+      "destination": "CyberCity",
+      "weight": 5,
+      "priority": 8,
+      "deadline_hours": 2.0,
+      "value": 102
+    },
+    {
+      "id": "P03",
+      "customer_name": "Rohan Gupta",
+      "destination": "Sec29",
+      "weight": 8,
+      "priority": 6,
+      "deadline_hours": 5.0,
+      "value": 79
+    },
+    {
+      "id": "P04",
+      "customer_name": "Ananya Rao",
+      "destination": "GolfCourse",
+      "weight": 4,
+      "priority": 7,
+      "deadline_hours": 4.0,
+      "value": 90
+    },
+    {
+      "id": "P05",
+      "customer_name": "Kabir Singh",
+      "destination": "Sec49",
+      "weight": 7,
+      "priority": 5,
+      "deadline_hours": 6.0,
+      "value": 68
+    },
+    {
+      "id": "P06",
+      "customer_name": "Neha Kapoor",
+      "destination": "Sec56",
+      "weight": 3,
+      "priority": 10,
+      "deadline_hours": 1.5,
+      "value": 122
+    }
+  ]
+}

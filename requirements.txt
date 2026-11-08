@@ -1,0 +1,6 @@
+# Mini-Courier Planner Dependencies
+# Design & Analysis of Algorithms (ETCCDA302)
+# K.R. Mangalam University
+
+# Core graphical rendering engine for Phase 4 runtime charts and Phase 5 screenshots
+Pillow>=9.0.0

@@ -1,0 +1,78 @@
+{
+  "dataset_name": "Unseen Evaluation Dataset (Viva Ready)",
+  "vehicle_capacity_kg": 25,
+  "parcels": [
+    {
+      "id": "U01",
+      "customer_name": "Dr. Ramanujan",
+      "destination": "CyberCity",
+      "weight": 5,
+      "priority": 10,
+      "deadline_hours": 1.0,
+      "value": 123
+    },
+    {
+      "id": "U02",
+      "customer_name": "Prof. Swaminathan",
+      "destination": "Sec14",
+      "weight": 7,
+      "priority": 8,
+      "deadline_hours": 3.5,
+      "value": 100
+    },
+    {
+      "id": "U03",
+      "customer_name": "Kalpana Chawla",
+      "destination": "GolfCourse",
+      "weight": 4,
+      "priority": 9,
+      "deadline_hours": 2.0,
+      "value": 112
+    },
+    {
+      "id": "U04",
+      "customer_name": "Homi Bhabha",
+      "destination": "Sec29",
+      "weight": 6,
+      "priority": 7,
+      "deadline_hours": 4.0,
+      "value": 90
+    },
+    {
+      "id": "U05",
+      "customer_name": "Vikram Sarabhai",
+      "destination": "Sec56",
+      "weight": 8,
+      "priority": 6,
+      "deadline_hours": 5.0,
+      "value": 79
+    },
+    {
+      "id": "U06",
+      "customer_name": "C.V. Raman",
+      "destination": "UdyogVihar",
+      "weight": 3,
+      "priority": 9,
+      "deadline_hours": 1.5,
+      "value": 112
+    },
+    {
+      "id": "U07",
+      "customer_name": "Satyendra Bose",
+      "destination": "Sec49",
+      "weight": 5,
+      "priority": 5,
+      "deadline_hours": 6.0,
+      "value": 68
+    },
+    {
+      "id": "U08",
+      "customer_name": "APJ Abdul Kalam",
+      "destination": "RajivChowk",
+      "weight": 2,
+      "priority": 10,
+      "deadline_hours": 0.8,
+      "value": 123
+    }
+  ]
+}
