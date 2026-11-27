@@ -99,7 +99,7 @@ def generate_all_artifacts():
     render_text_to_terminal_image(
         bench_text,
         os.path.join(screenshot_dir, "screenshot_phase4_benchmark.png"),
-        title="Phase 4 Performance Benchmarking & Scaling Analysis"
+        title="Performance Benchmarking & Complexity Scaling Analysis"
     )
 
     print("\nStep 2: Running Small Dataset Plan (Phase 2 & 3 Tracing)...")
@@ -116,7 +116,7 @@ def generate_all_artifacts():
     render_text_to_terminal_image(
         small_summary,
         os.path.join(screenshot_dir, "screenshot_phase2_3_small_dataset.png"),
-        title="Phases 2 & 3: Small Dataset Execution & DP Table Evidence"
+        title="Small Dataset Execution & Dynamic Programming Table Matrix"
     )
 
     print("\nStep 3: Running Unseen Dataset Evaluation (Viva Readiness)...")
@@ -132,7 +132,7 @@ def generate_all_artifacts():
     render_text_to_terminal_image(
         unseen_summary,
         os.path.join(screenshot_dir, "screenshot_phase5_unseen_evaluation.png"),
-        title="Phase 5: Unseen Dataset Evaluation (Viva Voce Output)"
+        title="Unseen Dataset Evaluation & Route Optimization"
     )
 
     print("\nStep 4: Rendering Architecture Overview Screenshot (Phase 1)...")
@@ -140,7 +140,7 @@ def generate_all_artifacts():
     render_text_to_terminal_image(
         arch_text,
         os.path.join(screenshot_dir, "screenshot_phase1_architecture.png"),
-        title="Phase 1: Problem Design, Graph Format & Pipeline Architecture"
+        title="System Architecture, Road Graph & Algorithmic Pipeline"
     )
 
     print("\nAll artifacts and evidence successfully generated in 'mini_courier_planner/output/'!")

@@ -2,7 +2,7 @@
         MINI-COURIER PLANNER: OPTIMIZED TRIP MANIFEST & ROUTE
 ================================================================================
 
-[1] PARCEL PRIORITIZATION (Phase 2 Sorting)
+[1] PARCEL PRIORITIZATION (Deadline & Urgency Sorting)
 Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utility
 --------------------------------------------------------------------------------
 1     U08    APJ Abdul Kalam RajivChowk        2 kg    0.8 hrs      10/10      123
@@ -14,7 +14,7 @@ Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utilit
 7     U05    Vikram Sarabhai Sec56             8 kg    5.0 hrs       6/10       79
 8     U07    Satyendra Bose  Sec49             5 kg    6.0 hrs       5/10       68
 
-[2] VEHICLE PACKING OPTIMIZATION (Phase 2 0/1 Knapsack DP)
+[2] VEHICLE PACKING OPTIMIZATION (0/1 Knapsack Dynamic Programming)
 * Vehicle Maximum Weight Capacity: 25 kg
 * Total Loaded Weight:             25 kg
 * Vehicle Capacity Utilization:    100.0%
@@ -30,7 +30,7 @@ Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utilit
     [DEFERRED] [U02] -> Prof. Swaminathan (Sec14) | 7 kg (exceeds capacity)
     [DEFERRED] [U05] -> Vikram Sarabhai (Sec56) | 8 kg (exceeds capacity)
 
-[2B] DYNAMIC PROGRAMMING MATRIX EVIDENCE:
+[2B] DYNAMIC PROGRAMMING 2D TABLE MATRIX:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Item / W         |    0 |    1 |    2 |    3 |    4 |    5 |    6 |    7 |    8 |    9 |   10 |   11 |   12 |   13 |   14 |   15 |   16 |   17 |   18 |   19 |   20 |   21 |   22 |   23 |   24 |   25
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,15 +45,15 @@ U05 (w=8,v=79)   |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 
 U07 (w=5,v=68)   |    0 |    0 |  123 |  123 |  123 |  235 |  235 |  246 |  246 |  347 |  358 |  358 |  358 |  358 |  470 |  470 |  470 |  470 |  470 |  538 |  560 |  570 |  570 |  570 |  570 |  628
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-[3] DELIVERY ROUTE & SHORTEST PATHS (Phase 3 Dijkstra + TSP)
+[3] DELIVERY ROUTE & SHORTEST PATHS (Dijkstra + Nearest-Neighbor TSP)
 * Sequence of Delivery Stops:      Hub -> Sec49 -> GolfCourse -> UdyogVihar -> CyberCity -> Sec29 -> RajivChowk -> Hub
 * Total Route Distance:            41.30 km
 * Turn-by-Turn Road Waypoints:     Hub -> Sec49 -> Sec56 -> GolfCourse -> CyberCity -> UdyogVihar -> CyberCity -> Sec29 -> RajivChowk -> SubhashChowk -> Hub
 
-[4] ALGORITHMIC RUNTIME BREAKDOWN (Phase 4 Timing)
-  * Sorting                  :   0.0351 ms
-  * Knapsack_DP              :   0.0803 ms
-  * Dijkstra_AllPairs        :   0.2829 ms
-  * Route_Planning_TSP       :   0.0699 ms
-  * Total_Pipeline           :   0.4682 ms
+[4] ALGORITHMIC RUNTIME BREAKDOWN
+  * Sorting                  :   0.0487 ms
+  * Knapsack_DP              :   0.1417 ms
+  * Dijkstra_AllPairs        :   1.1788 ms
+  * Route_Planning_TSP       :   0.0888 ms
+  * Total_Pipeline           :   1.4580 ms
 ================================================================================

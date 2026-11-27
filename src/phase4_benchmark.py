@@ -212,8 +212,8 @@ def draw_chart(
         draw.ellipse([(legend_x + 9, l_y + 3), (legend_x + 16, l_y + 9)], fill=color)
         draw.text((legend_x + 35, l_y), name, fill=(30, 30, 30))
 
-    # Watermark
-    footer = "K.R. Mangalam University | ETCCDA302 Capstone Assignment | Mini-Courier Planner"
+    # Student & University Watermark
+    footer = "K.R. Mangalam University | ETCCDA302 Capstone Project | Shivam Kumar Roy"
     draw.text((margin_left, height - 30), footer, fill=(130, 140, 160))
 
     img.save(output_path)

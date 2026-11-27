@@ -130,7 +130,7 @@ class MiniCourierPlanner:
         lines.append("=" * 80)
 
         # 1. Prioritization summary
-        lines.append("\n[1] PARCEL PRIORITIZATION (Phase 2 Sorting)")
+        lines.append("\n[1] PARCEL PRIORITIZATION (Deadline & Urgency Sorting)")
         lines.append(f"{'Rank':<5} {'ID':<6} {'Customer':<15} {'Destination':<14} {'Weight':<8} {'Deadline':<10} {'Priority':<9} {'Utility'}")
         lines.append("-" * 80)
         for rank, p in enumerate(plan.sorted_parcels, 1):
@@ -140,7 +140,7 @@ class MiniCourierPlanner:
             )
 
         # 2. Knapsack Packing summary
-        lines.append("\n[2] VEHICLE PACKING OPTIMIZATION (Phase 2 0/1 Knapsack DP)")
+        lines.append("\n[2] VEHICLE PACKING OPTIMIZATION (0/1 Knapsack Dynamic Programming)")
         lines.append(f"* Vehicle Maximum Weight Capacity: {plan.vehicle_capacity} kg")
         lines.append(f"* Total Loaded Weight:             {plan.total_weight} kg")
         lines.append(f"* Vehicle Capacity Utilization:    {plan.capacity_utilization_pct}%")
@@ -156,17 +156,17 @@ class MiniCourierPlanner:
 
         # Optional DP Table output evidence
         if show_dp_table and len(plan.sorted_parcels) <= 10 and plan.vehicle_capacity <= 30:
-            lines.append("\n[2B] DYNAMIC PROGRAMMING MATRIX EVIDENCE:")
+            lines.append("\n[2B] DYNAMIC PROGRAMMING 2D TABLE MATRIX:")
             lines.append(format_dp_table(plan.dp_table, plan.sorted_parcels, max_cols=plan.vehicle_capacity))
 
         # 3. Route & Dijkstra Path
-        lines.append("\n[3] DELIVERY ROUTE & SHORTEST PATHS (Phase 3 Dijkstra + TSP)")
+        lines.append("\n[3] DELIVERY ROUTE & SHORTEST PATHS (Dijkstra + Nearest-Neighbor TSP)")
         lines.append(f"* Sequence of Delivery Stops:      {' -> '.join(plan.delivery_route)}")
         lines.append(f"* Total Route Distance:            {plan.total_route_distance_km:.2f} km")
         lines.append(f"* Turn-by-Turn Road Waypoints:     {' -> '.join(plan.turn_by_turn_path)}")
 
         # 4. Performance Runtimes
-        lines.append("\n[4] ALGORITHMIC RUNTIME BREAKDOWN (Phase 4 Timing)")
+        lines.append("\n[4] ALGORITHMIC RUNTIME BREAKDOWN")
         for stage, duration in plan.stage_runtimes_ms.items():
             lines.append(f"  * {stage:<25}: {duration:>8.4f} ms")
 

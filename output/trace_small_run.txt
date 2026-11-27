@@ -2,7 +2,7 @@
         MINI-COURIER PLANNER: OPTIMIZED TRIP MANIFEST & ROUTE
 ================================================================================
 
-[1] PARCEL PRIORITIZATION (Phase 2 Sorting)
+[1] PARCEL PRIORITIZATION (Deadline & Urgency Sorting)
 Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utility
 --------------------------------------------------------------------------------
 1     P06    Neha Kapoor     Sec56             3 kg    1.5 hrs      10/10      122
@@ -12,7 +12,7 @@ Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utilit
 5     P03    Rohan Gupta     Sec29             8 kg    5.0 hrs       6/10       79
 6     P05    Kabir Singh     Sec49             7 kg    6.0 hrs       5/10       68
 
-[2] VEHICLE PACKING OPTIMIZATION (Phase 2 0/1 Knapsack DP)
+[2] VEHICLE PACKING OPTIMIZATION (0/1 Knapsack Dynamic Programming)
 * Vehicle Maximum Weight Capacity: 20 kg
 * Total Loaded Weight:             18 kg
 * Vehicle Capacity Utilization:    90.0%
@@ -26,7 +26,7 @@ Rank  ID     Customer        Destination    Weight   Deadline   Priority  Utilit
     [DEFERRED] [P03] -> Rohan Gupta (Sec29) | 8 kg (exceeds capacity)
     [DEFERRED] [P05] -> Kabir Singh (Sec49) | 7 kg (exceeds capacity)
 
-[2B] DYNAMIC PROGRAMMING MATRIX EVIDENCE:
+[2B] DYNAMIC PROGRAMMING 2D TABLE MATRIX:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Item / W         |    0 |    1 |    2 |    3 |    4 |    5 |    6 |    7 |    8 |    9 |   10 |   11 |   12 |   13 |   14 |   15 |   16 |   17 |   18 |   19 |   20
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,15 +39,15 @@ P03 (w=8,v=79)   |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  212 |  224 
 P05 (w=7,v=68)   |    0 |    0 |    0 |  122 |  122 |  122 |  122 |  212 |  224 |  233 |  233 |  233 |  314 |  323 |  335 |  335 |  335 |  335 |  425 |  425 |  425
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-[3] DELIVERY ROUTE & SHORTEST PATHS (Phase 3 Dijkstra + TSP)
+[3] DELIVERY ROUTE & SHORTEST PATHS (Dijkstra + Nearest-Neighbor TSP)
 * Sequence of Delivery Stops:      Hub -> Sec56 -> GolfCourse -> CyberCity -> Sec14 -> Hub
 * Total Route Distance:            37.60 km
 * Turn-by-Turn Road Waypoints:     Hub -> Sec49 -> Sec56 -> GolfCourse -> CyberCity -> Sec29 -> Sec14 -> RajivChowk -> SubhashChowk -> Hub
 
-[4] ALGORITHMIC RUNTIME BREAKDOWN (Phase 4 Timing)
-  * Sorting                  :   0.0163 ms
-  * Knapsack_DP              :   0.0389 ms
-  * Dijkstra_AllPairs        :   0.1514 ms
-  * Route_Planning_TSP       :   0.0336 ms
-  * Total_Pipeline           :   0.2402 ms
+[4] ALGORITHMIC RUNTIME BREAKDOWN
+  * Sorting                  :   0.0358 ms
+  * Knapsack_DP              :   0.0936 ms
+  * Dijkstra_AllPairs        :   0.3477 ms
+  * Route_Planning_TSP       :   0.0639 ms
+  * Total_Pipeline           :   0.5410 ms
 ================================================================================

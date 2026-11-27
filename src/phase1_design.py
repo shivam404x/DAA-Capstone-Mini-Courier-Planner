@@ -148,7 +148,7 @@ def get_architecture_overview() -> str:
     """Returns the formal architectural pipeline design of Mini-Courier Planner."""
     return """
 ================================================================================
-          MINI-COURIER PLANNER - SYSTEM ARCHITECTURE (PHASE 1)
+          MINI-COURIER PLANNER - SYSTEM ARCHITECTURE & PIPELINE
 ================================================================================
 Problem Statement:
 Given a list of customer parcels (with weights, deadlines, and priorities) and a 
@@ -163,39 +163,39 @@ Algorithmic Integration Pipeline:
                                        │
                                        ▼
 +------------------------------------------------------------------------------+
-| PHASE 2A: PARCEL PRIORITIZATION (Sorting Algorithms)                        |
-| • Implemented via Merge Sort (Stable, O(N log N)) & Quick Sort              |
-| • Sort Criterion: Primary = Earliest Deadline, Secondary = Priority Score   |
+| STAGE 1: PARCEL PRIORITIZATION (Sorting Algorithms)                          |
+| * Implemented via Merge Sort (Stable, O(N log N)) & Quick Sort               |
+| * Sort Criterion: Primary = Earliest Deadline, Secondary = Priority Score    |
 +------------------------------------------------------------------------------+
                                        │
                                        ▼
 +------------------------------------------------------------------------------+
-| PHASE 2B: VEHICLE CAPACITY ALLOCATION (0/1 Knapsack Dynamic Programming)     |
-| • State: DP[i][w] = Max utility using first i parcels within weight w        |
-| • Backtracking reconstruction to select optimal subset of parcels            |
-| • Output: Loaded parcels for current trip + Deferred parcels for next trip  |
+| STAGE 2: VEHICLE CAPACITY ALLOCATION (0/1 Knapsack Dynamic Programming)      |
+| * State: DP[i][w] = Max utility using first i parcels within weight w         |
+| * Backtracking reconstruction to select optimal subset of parcels             |
+| * Output: Loaded parcels for current trip + Deferred parcels for next trip   |
 +------------------------------------------------------------------------------+
                                        │
                                        ▼
 +------------------------------------------------------------------------------+
-| PHASE 3A: SHORTEST PATH CALCULATION (Dijkstra's Algorithm)                   |
-| • Computes minimum distance & exact road path between Depot and Destinations |
-| • Priority Queue (Min-Heap) implementation: O((V + E) log V)                 |
-| • Generates All-Pairs Metric Distance Matrix for active stops                |
+| STAGE 3: SHORTEST PATH CALCULATION (Dijkstra's Algorithm)                    |
+| * Computes minimum distance & exact road path between Depot and Destinations  |
+| * Priority Queue (Min-Heap) implementation: O((V + E) log V)                  |
+| * Generates All-Pairs Metric Distance Matrix for active stops                 |
 +------------------------------------------------------------------------------+
                                        │
                                        ▼
 +------------------------------------------------------------------------------+
-| PHASE 3B: ROUTE SEQUENCING (Nearest-Neighbor TSP Approximation)              |
-| • Starting from Hub, greedily visit nearest unvisited customer destination    |
-| • Returns to Hub to complete closed courier cycle                            |
-| • Calculates total trip distance & full turn-by-turn navigation waypoints    |
+| STAGE 4: ROUTE SEQUENCING (Nearest-Neighbor TSP Approximation)               |
+| * Starting from Hub, greedily visit nearest unvisited customer destination     |
+| * Returns to Hub to complete closed courier cycle                             |
+| * Calculates total trip distance & full turn-by-turn navigation waypoints     |
 +------------------------------------------------------------------------------+
                                        │
                                        ▼
 +------------------------------------------------------------------------------+
-| PHASE 4 & 5: BENCHMARKING, EMPIRICAL RUNTIME CHARTS & FINAL DEMONSTRATION    |
-| • Performance scaling on Small, Medium, Large datasets                       |
-| • Runtimes plotted and analyzed against theoretical Big-O bounds             |
+| STAGE 5: BENCHMARKING, EMPIRICAL RUNTIME CHARTS & SYSTEM VALIDATION          |
+| * Performance scaling on Small, Medium, Large datasets                        |
+| * Runtimes plotted and analyzed against theoretical Big-O bounds              |
 +------------------------------------------------------------------------------+
 """
